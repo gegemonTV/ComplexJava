@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Locale;
+import java.util.Objects;
 
 public class Complex {
 
@@ -78,7 +79,7 @@ public class Complex {
         return new Complex(this.real, -this.imag);
     }
 
-    public boolean equals(Complex z1, Complex z2){
+    public static boolean equals(Complex z1, Complex z2){
         return z1.getReal() == z2.getReal() && z1.getImaginary() == z2.getImaginary();
     }
 
@@ -128,6 +129,19 @@ public class Complex {
 
     public Complex sqrt(){
         return new Complex(Math.sqrt((this.real+this.abs())/2), Math.sqrt((-this.real+this.abs())/2));
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Complex complex = (Complex) o;
+        return Double.compare(complex.real, real) == 0 && Double.compare(complex.imag, imag) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(real, imag);
     }
 
     public double getArgument(){
