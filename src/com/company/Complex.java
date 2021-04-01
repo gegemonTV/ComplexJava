@@ -31,7 +31,7 @@ public class Complex {
         return this.imag;
     }
 //------------------------------------пункт 2---------------------------------------------
-    public Complex add(Complex z1, Complex z2){
+    public static Complex add(Complex z1, Complex z2){
         return new Complex(z1.getReal()+z2.getReal(),
                 z1.getImaginary()+z2.getImaginary());
     }
@@ -41,7 +41,7 @@ public class Complex {
         this.imag += z.getImaginary();
     }
 
-    public Complex subtract(Complex z1, Complex z2){
+    public static Complex subtract(Complex z1, Complex z2){
         return new Complex(z1.getReal()-z2.getReal(),
                 z1.getImaginary()- z2.getImaginary());
     }
@@ -50,7 +50,7 @@ public class Complex {
         this.real -= z.getReal();
         this.imag -= z.getImaginary();
     }
-    public Complex multiply(Complex z1, Complex z2){
+    public static Complex multiply(Complex z1, Complex z2){
         return new Complex(z1.getReal()*z2.getReal() - z1.getImaginary()*z2.getImaginary(),
                 z1.getReal()*z2.getImaginary() + z2.getReal()*z1.getImaginary());
     }
@@ -60,7 +60,7 @@ public class Complex {
         this.imag = this.real*z.getImaginary() + this.imag*z.getReal();
     }
 
-    public Complex division(Complex z1, Complex z2){
+    public static Complex division(Complex z1, Complex z2){
         return new Complex((z1.getReal()*z2.getReal()+z1.getImaginary()*z2.getImaginary())/(z2.getReal() * z2.getReal() + z2.getImaginary()*z2.getImaginary()),
                 (z1.getImaginary()*z2.getReal()-z1.getReal()*z2.getImaginary())/(z2.getReal() * z2.getReal() + z2.getImaginary()*z2.getImaginary()));
     }
@@ -101,7 +101,7 @@ public class Complex {
     }
 
 //-------------------------------------------пункт 4--------------------------------------------------------------------
-    public Complex parse(String zstring){
+    public static Complex parse(String zstring){
         zstring = zstring.replaceAll(" ", "");
 
         if (zstring.contains(String.valueOf("+")) || (zstring.contains(String.valueOf("-")) && zstring.lastIndexOf('-') > 0)) {
