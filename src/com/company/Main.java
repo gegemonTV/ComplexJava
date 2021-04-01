@@ -10,11 +10,7 @@ public  class Main {
 
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
-        HashMap<Complex, Complex> map = new HashMap<>();
-        map.put(new Complex(), new Complex(1, 0));
-        map.put(new Complex(), new Complex(1, 0));
-        map.put(new Complex(1, 0), new Complex(1, 0));
-        map.put(new Complex(), new Complex(1, 0));
-        System.out.println(map.containsKey(new Complex(1, 0)));
+        out.println(new Complex(1.0, 2).pow(0.5));
+        out.println(new Complex(1.0, 2).sqrt());
     }
 }

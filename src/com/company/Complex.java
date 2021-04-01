@@ -124,7 +124,7 @@ public class Complex {
 //-------------------------------------------пункт 5--------------------------------------------------------------------
     public Complex pow(double n){
         return new Complex(Math.pow(this.abs(), n)*Math.cos(Math.acos(this.real/this.abs())*n),
-                Math.pow(this.abs(), n)*Math.sin(Math.asin(this.real/this.abs())*n));
+                Math.pow(this.abs(), n)*Math.sin(Math.asin(this.imag/this.abs())*n));
     }
 
     public Complex sqrt(){
